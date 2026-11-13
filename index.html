@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#f6f1e8"><meta name="description" content="پیشنهادهای پوشش شخصی‌سازی‌شده بر اساس فصل، موقعیت و سلیقه شما">
+  <link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="icon.png" type="image/png"><link rel="stylesheet" href="style.css">
+  <title>لباس مناسب | پیشنهاد پوشش دلخواه</title>
+</head>
+<body>
+  <header class="topbar"><a class="brand" href="#top" aria-label="لباس مناسب، خانه"><span class="brand-mark" aria-hidden="true">ل</span><span>لباس <b>مناسب</b></span></a><span class="offline"><i></i> همراه آفلاین</span></header>
+  <main id="top">
+    <section class="hero"><div class="hero-copy"><p class="eyebrow">استایل، با انتخاب خودت</p><h1>امروز چی <em>بپوشم؟</em></h1><p class="hero-desc">چند ترکیب کاربردی بر اساس حال‌وهوا، موقعیت و سلیقه‌ات؛ بدون وزن‌کشی و عکس.</p></div><div class="hero-art" aria-hidden="true"><span class="sun"></span><div class="hanger">⌁</div><span class="art-label">YOUR<br>OWN STYLE</span></div></section>
+
+    <section class="set-card" id="set-saz" aria-labelledby="set-title">
+      <div class="section-head"><div><p class="eyebrow">لباسی که داری</p><h2 id="set-title">با این لباس چی ست کنم؟</h2></div><span class="step-badge">ست‌ساز</span></div>
+      <p class="subtext">عکس را انتخاب کن، رنگش را بررسی کن و ایده‌های هماهنگ بگیر. نوع لباس را خودت انتخاب کن؛ برنامه نوع لباس را از روی عکس تشخیص نمی‌دهد.</p>
+      <div class="set-grid">
+        <div class="upload-area">
+          <label class="field" for="item-type"><span>نوع لباس (انتخاب دستی)</span><select id="item-type"><option value="top">پیراهن / بالاپوش</option><option value="pants">شلوار</option><option value="coat">مانتو / کت / کاپشن</option><option value="dress">لباس یک‌تکه / پیراهن</option><option value="shoes">کفش</option><option value="scarf">روسری / شال</option><option value="bag">کیف</option><option value="other">سایر</option></select></label>
+          <label class="upload-button" for="garment-photo">انتخاب عکس لباس <span aria-hidden="true">＋</span></label><input id="garment-photo" type="file" accept="image/*" hidden>
+          <div id="image-preview-wrap" class="image-preview-wrap" hidden><img id="image-preview" alt="پیش‌نمایش عکس لباس انتخاب‌شده"><button id="remove-photo" class="remove-photo" type="button">حذف عکس / انتخاب عکس دیگر</button></div>
+          <p class="privacy-note set-privacy"><span aria-hidden="true">♡</span> حریم خصوصی: عکس فقط روی همین دستگاه و در مرورگر پردازش می‌شود و به هیچ سروری ارسال نمی‌شود.</p>
+        </div>
+        <div class="color-panel"><h3>رنگ لباس</h3><p class="color-help">از روی عکس، رنگ غالب به‌صورت تقریبی با Canvas برآورد می‌شود. نور، طرح و پس‌زمینه می‌توانند نتیجه را تغییر دهند.</p>
+          <button id="analyze-color" class="button secondary analyze-button" type="button" disabled>برآورد رنگ از عکس</button>
+          <div class="color-controls"><label class="field" for="manual-color"><span>انتخاب / اصلاح دستی رنگ</span><select id="manual-color"><option value="مشکی">مشکی</option><option value="سفید">سفید</option><option value="خاکستری">خاکستری</option><option value="سرمه‌ای">سرمه‌ای</option><option value="آبی">آبی</option><option value="سبز">سبز</option><option value="زیتونی">زیتونی</option><option value="قرمز">قرمز</option><option value="زرشکی">زرشکی</option><option value="صورتی">صورتی</option><option value="بنفش">بنفش</option><option value="زرد">زرد</option><option value="نارنجی">نارنجی</option><option value="قهوه‌ای">قهوه‌ای</option><option value="کرم">کرم</option><option value="بژ">بژ</option></select></label><label class="field color-picker-label" for="color-correction"><span>اصلاح دقیق رنگ (اختیاری)</span><input id="color-correction" type="color" value="#31594c" aria-label="انتخاب رنگ دقیق"></label></div>
+          <p id="color-status" class="color-status" aria-live="polite">عکس لازم نیست؛ می‌توانی رنگ را دستی انتخاب کنی.</p>
+          <button id="make-set" class="button primary make-set" type="button">پیشنهاد ست‌ها <span aria-hidden="true">←</span></button>
+        </div>
+      </div>
+      <div id="set-results" class="set-results" aria-live="polite" hidden></div>
+    </section>
+    <section class="form-card" aria-labelledby="form-title"><div class="section-head"><div><p class="eyebrow">قدم اول</p><h2 id="form-title">برای پیشنهاد بهتر بگو…</h2></div><span class="step-badge">۱ / ۲</span></div><p class="subtext">انتخاب‌هایت فقط روی همین دستگاه ذخیره می‌شود و هر وقت خواستی پاکش کن.</p>
+      <form id="style-form">
+        <fieldset><legend>۱. برای چه کسی؟</legend><div class="choice-row three"><label class="choice"><input type="radio" name="gender" value="girl" checked><span>دختر</span></label><label class="choice"><input type="radio" name="gender" value="boy"><span>پسر</span></label><label class="choice"><input type="radio" name="gender" value="any"><span>بی‌تفاوت</span></label></div></fieldset>
+        <div class="field-grid">
+          <label class="field"><span>فرم اندام</span><select name="body"><option value="slim">لاغر</option><option value="medium" selected>متوسط</option><option value="full">درشت‌اندام</option></select></label>
+          <label class="field"><span>قد</span><select name="height"><option value="short">کوتاه</option><option value="medium" selected>متوسط</option><option value="tall">بلند</option></select></label>
+          <label class="field"><span>فصل</span><select name="season"><option value="spring">بهار</option><option value="summer">تابستان</option><option value="autumn">پاییز</option><option value="winter">زمستان</option></select></label>
+          <label class="field"><span>تونالیته رنگی</span><select name="tone"><option value="warm">گرم</option><option value="cool">سرد</option><option value="neutral">خنثی</option><option value="any" selected>فرقی ندارد</option></select></label>
+          <label class="field"><span>موقعیت</span><select name="occasion"><option value="daily">روزمره</option><option value="work">کار یا دانشگاه</option><option value="party">مهمانی</option></select></label>
+          <label class="field"><span>حال‌وهوای استایل</span><select name="style"><option value="sport">اسپرت</option><option value="minimal" selected>مینیمال</option><option value="classic">کلاسیک</option></select></label>
+        </div>
+        <fieldset class="coverage"><legend>میزان پوشیدگی</legend><div class="choice-row two"><label class="choice"><input type="radio" name="coverage" value="covered"><span>پوشیده‌تر</span></label><label class="choice"><input type="radio" name="coverage" value="regular" checked><span>عادی</span></label></div></fieldset>
+        <div class="form-actions"><button class="button primary" type="submit"><span>پیشنهاد استایل من</span><span aria-hidden="true">←</span></button><button class="reset-link" id="reset" type="button">پاک‌کردن انتخاب‌ها</button></div>
+      </form>
+      <p class="privacy-note"><span aria-hidden="true">♡</span> وزن یا عکس لازم نیست. پوشش سلیقه‌ای است؛ این پیشنهادها قانون قطعی یا قضاوت درباره بدن نیستند.</p>
+    </section>
+    <section id="results" class="results" aria-live="polite" aria-busy="false" hidden><div class="results-head"><div><p class="eyebrow">انتخاب‌های تو، ترکیب‌های تازه</p><h2>چند ایده برای پوشیدن</h2><p id="summary" class="subtext"></p></div><button id="copy" class="button secondary" type="button">کپی پیشنهادها</button></div><div id="palette" class="palette" aria-label="پالت رنگ پیشنهادی"></div><div id="outfit-list" class="outfit-list"></div><p class="end-note">این‌ها ایده‌اند، نه قانون. با راحتی و چیزهایی که دوست داری، ترکیبشان کن.</p></section>
+  </main><footer><span>ساخته‌شده برای انتخاب‌های خودت</span><span>بدون حساب کاربری · بدون اینترنت</span></footer>
+  <script src="app.js" defer></script>
+</body></html>

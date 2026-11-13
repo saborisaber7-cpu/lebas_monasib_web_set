@@ -1,0 +1,22 @@
+{
+  "id": "./",
+  "name": "لباس مناسب | پیشنهاد پوشش دلخواه",
+  "short_name": "لباس مناسب",
+  "description": "پیشنهاد استایل شخصی‌سازی‌شده و ست‌ساز لباس با تحلیل محلی رنگ عکس، آفلاین و بدون ارسال عکس",
+  "lang": "fa",
+  "dir": "rtl",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#f6f1e8",
+  "theme_color": "#f6f1e8",
+  "icons": [
+    {
+      "src": "./icon.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
